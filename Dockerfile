@@ -21,7 +21,7 @@ COPY . /srv/jekyll
 # Build Jekyll
 WORKDIR /srv/jekyll
 RUN bundle install
-RUN jekyll build --source /srv/jekyll --destination /usr/share/nginx/html
+RUN bundle exec jekyll build --source /srv/jekyll --destination /usr/share/nginx/html
 
 # ENV/EXPOSE
 EXPOSE 80
