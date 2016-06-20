@@ -20,7 +20,7 @@ COPY . /srv/jekyll
 
 # Build Jekyll
 WORKDIR /srv/jekyll
-RUN bundle install -j8
+RUN bundle install --deployment
 RUN jekyll build --source /srv/jekyll --destination /usr/share/nginx/html
 
 # ENV/EXPOSE
