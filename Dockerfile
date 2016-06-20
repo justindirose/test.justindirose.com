@@ -11,7 +11,6 @@ FROM justindirose/nginx-jekyll
 MAINTAINER Justin DiRose desk@justindirose.com
 
 # Add virtual host config
-RUN rm /etc/nginx/sites-available/default
 COPY nginx/test.justindirose.com /etc/nginx/sites-available/test.justindirose.com
 RUN ln -s /etc/nginx/sites-available/test.justindirose.com /etc/nginx/sites-enabled/test.justindirose.com
 
