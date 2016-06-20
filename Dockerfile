@@ -11,7 +11,6 @@ FROM justindirose/nginx-jekyll
 MAINTAINER Justin DiRose desk@justindirose.com
 
 # Add virtual host config
-RUN rm /etc/nginx/sites-available/default
 COPY nginx/test.justindirose.com /etc/nginx/sites-available/test.justindirose.com
 RUN ln -s /etc/nginx/sites-available/test.justindirose.com /etc/nginx/sites-enabled/test.justindirose.com
 
@@ -21,8 +20,8 @@ COPY . /srv/jekyll
 
 # Build Jekyll
 WORKDIR /srv/jekyll
-RUN bundle install -j8
-RUN jekyll build --destination /usr/share/nginx/html
+RUN bundle install
+RUN bundle exec jekyll build --source /srv/jekyll --destination /usr/share/nginx/html
 
 # ENV/EXPOSE
 EXPOSE 80
