@@ -16,6 +16,6 @@ server {
                 # include /etc/nginx/naxsi.rules
         }
         location /hubhook {
-                proxy_pass https://dockerhost:3000;
+                proxy_pass http://dockerhost:3000;
         }
 }
