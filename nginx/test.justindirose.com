@@ -15,13 +15,4 @@ server {
                 # Uncomment to enable naxsi on this location
                 # include /etc/nginx/naxsi.rules
         }
-        location /hubhook {
-                proxy_pass http://dockerhost:3000/;
-
-                set $true 1;
-
-                if ($true) {
-                        # nothing
-                }
-        }
 }
